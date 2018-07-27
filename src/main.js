@@ -1,17 +1,19 @@
-import React from "react";
+import React,{Component} from "react";
 
-class main extends React.Component{
+
+
+class Main extends Component{
 	
 	
 	render(){
+	//var data = props.data;
 		return(
 			<div className= "row">
 				<div className= "col-md-4">
-					<img src={author.imageURL} className="authorimage">
-		
+					<img src={author.imageURL} className="authorimage"/>
 			</div>
 				<div className= "col-md-8">
-					< books.map(function(title){ return (<p>title</p>);})>
+					{books.map(function(title){ return (<p>title</p>);})}
 			</div>
 			</div>
 		);
@@ -20,4 +22,4 @@ class main extends React.Component{
 	}
 }
 
-export default main;
+export default Main;
