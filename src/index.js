@@ -1,8 +1,12 @@
-import React from "react";;
+import React from "react";
+import ReactDOM from "react-dom";
 import data from "./data.js";
+import App from "./app.js";
+//import registerServiceWorker from './registerServiceWorker';
 import {shuffle, sample} from 'underscore';
 
 const authorData= data;
+
 function getData(){
 	const bookData = authorData.reduce((p,c,i)=>p.books.concat(c.books));
 	const fourRandomBooks = shuffle(bookData).slice(0,4);
@@ -32,16 +36,15 @@ function getData(){
 */
 
 const state = {
-			mainData : getData()
-		/* mainData : 	{	
-							author :authorData[i],
-							books : authorData[i].books;
+			//mainData : getData()
+		 mainData : 	{	
+							//author :authorData[0].name,
+							//books : authorData[0].books
+							author:"naman",
+							books:"21 days in future"
 			}
-		*/
+		
 	}
+ReactDOM.render(<App/>, document.getElementById('root'));
+//React.render(<App {...state}/>, document.getElementById('root'));
 
-React.render(<App {...state}/>, document.getElementById('root'))
-             
-             
-             
-             
