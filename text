@@ -1,0 +1,93 @@
+Map, Filter and Reduce in Javascript
+
+With functional programming you'll never have to write a for loop again.
+When you call map on an array, it executes that callback on every element within it, returning a new array with all of the values that the callback returned.
+
+map passes three arguments to your callback
+The current item in the array
+The array index of the current item
+The entire array you called map on 
+
+var tasks = [
+ 
+  {
+ 
+    'name'     : 'Write for Envato Tuts+',
+ 
+    'duration' : 120
+ 
+  },
+ 
+  {
+ 
+    'name'     : 'Work out',
+ 
+    'duration' : 60
+ 
+  },
+ 
+  {
+ 
+    'name'     : 'Procrastinate on Duolingo',
+ 
+    'duration' : 240
+ 
+  }
+ 
+];
+Using for loop
+var task_names = [];
+ 
+for (var i = 0, max = tasks.length; i < max; i += 1) {
+ 
+    task_names.push(tasks[i].name);
+ 
+}
+
+
+Using forEach
+
+var task_names = [];
+ 
+tasks.forEach(function (task) {
+ 
+    task_names.push(task.name);
+     
+});
+Using map
+var task_names = tasks.map(function (task, index, array) {
+ 
+    return task.name; 
+ 
+});
+Don't have to create a new array and push into it. map returns the finished product all in one go
+forEach returns undefined, so it doesn't chain with other array methods. map returns an array, so you can chain it with other array methods.
+Arrow functions let us leave out the return keyword in one-liners. 
+var task_names = tasks.map((task) => task.name );
+
+Filter - It takes an array, and filters out unwanted elements.
+var difficult_tasks = [];
+ 
+tasks.forEach(function (task) {
+    if (task.duration >= 120) {
+        difficult_tasks.push(task);
+    }
+});
+With ES6
+
+var difficult_tasks = tasks.filter((task) => task.duration >= 120 );
+
+Reduce - takes all of the elements in an array, and reduces them into a single value.
+reduce passes your callback four arguments
+current value, prev value, current index, array you called reduce on
+var total_time = tasks.reduce(function (previous, current) {
+    return previous + current;
+}, 0);
+Using arrow
+var total_time = tasks.reduce((previous, current)=> previous + current );
+For Concatenation 
+var array_of_arrays = [[1, 2], [3, 4], [5, 6]];
+var concatenated = array_of_arrays.reduce( function (previous, current) {
+        return previous.concat(current);	});
+.find() method - get the value of the first element in the array that satisfies the provided condition
+The some() method checks if any of the elements in an array pass a test (provided as a function)
