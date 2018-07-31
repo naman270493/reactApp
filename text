@@ -91,3 +91,12 @@ var concatenated = array_of_arrays.reduce( function (previous, current) {
         return previous.concat(current);	});
 .find() method - get the value of the first element in the array that satisfies the provided condition
 The some() method checks if any of the elements in an array pass a test (provided as a function)
+
+
+let sum = arr.reduce((acc, val) => {
+  return acc + val;
+}, 100);
+here we want to calculate sum but with initial value of 100
+
+data.reduce(function(p,c,i){ return p.concat(c.books)},[]);
+here p will be empty array in the beginnning starting with arr[0]i.e. first array
