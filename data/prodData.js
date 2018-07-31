@@ -1,6 +1,6 @@
 var data = [{
   name: 'Jane Austen',
-  imageURL: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/jane-austen.jpg',
+  imgSrc: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/jane-austen.jpg',
   books: [
     'Pride and Prejudice',
     'Sense and Sensibility',
@@ -8,13 +8,13 @@ var data = [{
   ]
 }, {
   name: 'Joseph Conrad',
-  imageURL: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/joseph-conrad.png',
+  imgSrc: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/joseph-conrad.png',
   books: [
     'Heart of Darkness'
   ]
 }, {
   name: 'Charles Dickens',
-  imageURL: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/charles-dickens.jpg',
+  imgSrc: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/charles-dickens.jpg',
   books: [
     'A Tale of Two Cities',
     'A Christmas Carol',
@@ -23,7 +23,7 @@ var data = [{
   ]
 }, {
   name: 'Sigmunnd Freud',
-  imageURL: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/sigmund-freud.jpg',
+  imgSrc: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/sigmund-freud.jpg',
   books: [
     'Jokes and Their Relation to the Unconscious',
     'Civilization and Its Discontents',
@@ -31,7 +31,7 @@ var data = [{
   ]
 }, {
   name: 'Friedrich Nietzsche',
-  imageURL: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/friedrich-nietzsche.jpg',
+  imgSrc: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/friedrich-nietzsche.jpg',
   books: [
     'Thus Spake Zarathustra',
     'Ecce Homo',
@@ -40,7 +40,7 @@ var data = [{
   ]
 }, {
   name: 'William Shakespeare',
-  imageURL: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/william-shakespeare.jpg',
+  imgSrc: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/william-shakespeare.jpg',
   books: [
     'King Lear',
     'A Midsummer Night\'s Dream',
@@ -50,10 +50,12 @@ var data = [{
   ]
 }, {
   name: 'Mark Twain',
-  imageURL: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/mark-twain.jpg',
+  imgSrc: 'https://raw.githubusercontent.com/khyamay/react-quiz/master/images/authors/mark-twain.jpg',
   books: [
     'Huckleberry Finn',
     'Tom Sawyer',
     'A Connecticut Yankee at King Arthur\'s Court'
   ]
 }];
+
+export default data;
