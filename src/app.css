@@ -1,0 +1,17 @@
+.row  .col-md-6  p{
+padding:45px;
+margin: 20px;
+background-color:#E6E6FA;
+}
+
+.center{
+text-align:center;
+
+}
+
+.authnamecss{
+padding:20px;
+margin :10px;
+background-color:#00FFFF;
+text-align:center;
+}
