@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Link, withRouter } from "react-router-dom";
 import data from "./prodData.js";
+import AddAuthorForm from "./AddAuthorForm.js";
 import "./bootstrap.min.css";
 import "./app.css";
 
@@ -86,6 +88,7 @@ function App (mainData, highlight, onAnswerSelected){
 			<div>
 			<Header />
 			<Main {...mainData} highlight={highlight} onAnswerSelected= {onAnswerSelected}/>
+			<span className="btn btn-success"><Link to="/add"> Add an Author</Link></span>
 			<Footer />
 			</div>
 	);
@@ -96,9 +99,24 @@ function onAnswerSelected(answer){
 				state.highlight= isCorrect ? 'green' : 'red';
 				render();
 		}
+function AuthorWrapper() {
+				return (<AddAuthorForm onAddAuthor ={(author) => authorData.push(author)} />);
+}
+
+function AppRender(){
+			return (<App  {...state} onAnswerSelected= {onAnswerSelected} />);
+}
 		
 //ReactDOM.render(<App/>, document.getElementById('root'));
 function render(){
-ReactDOM.render(<App  {...state} onAnswerSelected= {onAnswerSelected} />, document.getElementById('root'));
+	ReactDOM.render(
+	<BrowserRouter>
+			<React.Fragment>
+				< Route exact path = "/" component = {AppRender} />
+				< Route path = "/add" component = {AddAuthorForm} />
+			</React.Fragment>
+		</BrowserRouter>, document.getElementById('root'));
+		
+		
 }
 render();
