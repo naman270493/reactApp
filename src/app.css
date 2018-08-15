@@ -1,4 +1,4 @@
-.row  .col-md-6  p{
+.answer{
 padding:45px;
 margin: 20px;
 background-color:#E6E6FA;
@@ -14,4 +14,23 @@ padding:20px;
 margin :10px;
 background-color:#00FFFF;
 text-align:center;
+}
+
+.addauthorfield{
+padding:20px;
+margin :10px;
+background-color:#E6E6FA;
+}
+
+.btn-primary{
+margin :30px;
+}
+
+.mar{
+margin :20px;
+}
+.btn-success{
+margin-left :250px;
+margin-bottom:50px;
+
 }
