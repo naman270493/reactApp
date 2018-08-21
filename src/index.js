@@ -76,6 +76,8 @@ function Main({mainData, highlight}){
 			</div>
 				<div className= "col-md-6 offset-1">
 					{mainData.books.map(function(title){ return (<Book title={title} key={title} onClick={onAnswerSelected}/>);})}
+										     
+                          <div className="btn btn-primary btn-lg float-right" onClick={onContinue}> Continue </div>	
 			</div>
 			</div>
 			</div>
@@ -88,7 +90,7 @@ function App (mainData, highlight, onAnswerSelected){
 			<div>
 			<Header />
 			<Main {...mainData} highlight={highlight} onAnswerSelected= {onAnswerSelected}/>
-			<span className="btn btn-success"><Link to="/add"> Add an Author</Link></span>
+			<span className="btn-lg btn-success"><Link to="/add"> Add an Author</Link></span>
 			<Footer />
 			</div>
 	);
@@ -99,9 +101,14 @@ function onAnswerSelected(answer){
 				state.highlight= isCorrect ? 'green' : 'red';
 				render();
 		}
-function AuthorWrapper() {
-				return (<AddAuthorForm onAddAuthor ={(author) => authorData.push(author)} />);
-}
+
+const AuthorWrapper = withRouter(({history}) =>
+			<AddAuthorForm onAddAuthor = {(author) => { 
+													
+												authorData.push(author);
+												history.push('/');
+												} } />
+);
 
 function AppRender(){
 			return (<App  {...state} onAnswerSelected= {onAnswerSelected} />);
@@ -113,7 +120,7 @@ function render(){
 	<BrowserRouter>
 			<React.Fragment>
 				< Route exact path = "/" component = {AppRender} />
-				< Route path = "/add" component = {AddAuthorForm} />
+				< Route path = "/add" component = {AuthorWrapper} />
 			</React.Fragment>
 		</BrowserRouter>, document.getElementById('root'));
 		
