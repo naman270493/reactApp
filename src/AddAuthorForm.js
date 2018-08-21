@@ -59,7 +59,7 @@ class AuthorForm extends Component{
 		<input type="text" name = "bookTemp" className="mar" onChange={this.onFieldChange} value={this.state.bookTemp}/>
 		<input type="button" className="btn btn-primary" onClick={this.handleAddBook} value="+"/>
 		</div>
-		<input type="Submit" className="btn btn-primary" value="Add"/>
+		<input type="Submit" className="btn-lg btn-primary" value="Add"/>
 		</form>
 		);
 }
